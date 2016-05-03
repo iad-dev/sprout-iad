@@ -1,0 +1,5 @@
+tmp/
+cookbooks/
+.idea/
+.vagrant/
+Cheffile.lock
