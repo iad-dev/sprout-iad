@@ -26,12 +26,12 @@ port = 8081
 
 [meeple-auth]
 directory = ~/workspace/meeple-auth
-command = rake clean build default
+command = until $(curl --output /dev/null --silent --head --fail http://meeple-config.dev/health); do sleep 1; done && rake clean build default
 port = 8082
 
 [meeple-people]
 directory = ~/workspace/meeple-people
-command = rake clean build default
+command = until $(curl --output /dev/null --silent --head --fail http://meeple-auth.dev/health); do sleep 1; done && rake clean build default
 port = 8083
 
 [allocations]
