@@ -12,6 +12,12 @@ You can update the Cheffile to point to the local sprout-iad repo for testing ch
     
     cookbook 'sprout-iad',
       :path => '../sprout-iad'
+      
+You can run a single recipe to test it out by using this command:
+
+    $ chruby-exec system -- bundle exec soloist run_recipe sprout-iad::<recipe>
+    
+in the sprout-wrap directory
 
 ### Publishing Changes
 

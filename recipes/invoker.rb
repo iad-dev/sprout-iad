@@ -18,6 +18,8 @@ end
 # Ini file
 file "#{ENV['HOME']}/.invoker/iad-apps.ini" do
   action :create
+  owner 'pivotal'
+  group 'staff'
   content <<-INI
 [meeple-config]
 directory = ~/workspace/meeple-config
