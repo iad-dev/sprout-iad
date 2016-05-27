@@ -5,14 +5,16 @@ bash 'invoker-install-gems' do
   code <<-BASH
     set -e
 
-    sudo -s "chruby-exec #{RUBY_VERSION} -- bash -c 'gem install invoker'"
-    chown pivotal:staff /Users/pivotal/.rubies/ruby-#{RUBY_VERSION}/bin/invoker
-    chruby-exec #{RUBY_VERSION} -- gem install terminal-notifier
+    chruby-exec #{RUBY_VERSION} -- gem install --user-install invoker
+    chruby-exec #{RUBY_VERSION} -- gem install --user-install terminal-notifier
   BASH
 end
 
-bash 'invoker-setup' do
-  code "sudo -s 'chruby-exec #{RUBY_VERSION} -- invoker setup'"
+# invoker directory
+directory "#{ENV['HOME']}/.invoker" do
+  action :create
+  owner 'pivotal'
+  group 'staff'
 end
 
 # Ini file
