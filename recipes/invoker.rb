@@ -61,5 +61,11 @@ directory = ~/workspace/roster
 command = rake clean build default
 port = 4030
 disable_autorun = true
+
+[scavenger]
+directory = ~/workspace/scavenger
+command = rake clean build default
+port = 4040
+disable_autorun = true
   INI
 end
