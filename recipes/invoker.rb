@@ -55,5 +55,11 @@ directory = ~/workspace/augur
 command = bundle exec foreman start -f Procfile.dev
 port = 4020
 disable_autorun = true
+
+[roster]
+directory = ~/workspace/roster
+command = rake clean build default
+port = 4030
+disable_autorun = true
   INI
 end
