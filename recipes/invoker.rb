@@ -5,8 +5,8 @@ bash 'invoker-install-gems' do
   code <<-BASH
     set -e
 
-    chruby-exec #{RUBY_VERSION} -- gem install --user-install invoker
-    chruby-exec #{RUBY_VERSION} -- gem install --user-install terminal-notifier
+    rbenv exec #{RUBY_VERSION} -- gem install --user-install invoker
+    rbenv exec #{RUBY_VERSION} -- gem install --user-install terminal-notifier
   BASH
 end
 
