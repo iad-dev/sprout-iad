@@ -15,7 +15,7 @@ You can update the Cheffile to point to the local sprout-iad repo for testing ch
       
 You can run a single recipe to test it out by using this command:
 
-    $ rbenv exec system -- bundle exec soloist run_recipe sprout-iad::<recipe>
+    $ rbenv exec bundle exec soloist run_recipe sprout-iad::<recipe>
     
 in the sprout-wrap directory
 
