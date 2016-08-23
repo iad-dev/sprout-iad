@@ -40,7 +40,7 @@ port = 8083
 
 [meeple-api]
 directory = ~/workspace/meeple-api
-command = until $(curl --output /dev/null --silent --head --fail http://localhost:8083/health); do sleep 1; done && rake clean build default
+command = until $(curl --output /dev/null --silent --head --fail http://meeple-auth.dev/health); do sleep 1; done && rake clean build default
 port = 8084
 
 [allocations]
