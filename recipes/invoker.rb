@@ -38,6 +38,11 @@ directory = ~/workspace/meeple-people
 command = until $(curl --output /dev/null --silent --head --fail http://localhost:8082/health); do sleep 1; done && rake clean build default
 port = 8083
 
+[meeple-projects]
+directory = ~/workspace/meeple-projects
+command = until $(curl --output /dev/null --silent --head --fail http://localhost:8082/health); do sleep 1; done && rake clean build default
+port = 8085
+
 [meeple-api]
 directory = ~/workspace/meeple-api
 command = until $(curl --output /dev/null --silent --head --fail http://meeple-auth.dev/health); do sleep 1; done && rake clean build default
