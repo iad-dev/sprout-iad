@@ -23,37 +23,6 @@ file "#{ENV['HOME']}/.invoker/iad-apps.ini" do
   owner 'pivotal'
   group 'staff'
   content <<-INI
-[meeple-config]
-directory = ~/workspace/meeple-config
-command = rake clean build default
-port = 8081
-
-[meeple-auth]
-directory = ~/workspace/meeple-auth
-command = until $(curl --output /dev/null --silent --head --fail http://localhost:8081/health); do sleep 1; done && rake clean build default
-port = 8082
-
-[meeple-people]
-directory = ~/workspace/meeple-people
-command = until $(curl --output /dev/null --silent --head --fail http://localhost:8082/health); do sleep 1; done && rake clean build default
-port = 8083
-
-[meeple-projects]
-directory = ~/workspace/meeple-projects
-command = until $(curl --output /dev/null --silent --head --fail http://localhost:8082/health); do sleep 1; done && rake clean build default
-port = 8085
-
-[meeple-api]
-directory = ~/workspace/meeple-api
-command = until $(curl --output /dev/null --silent --head --fail http://meeple-auth.dev/health); do sleep 1; done && rake clean build default
-port = 8084
-
-[allocations]
-directory = ~/workspace/allocations
-command = foreman start
-port = 4000
-disable_autorun = true
-
 [pivots]
 directory = ~/workspace/pivots-two
 command = bundle exec foreman start -f Procfile.dev
