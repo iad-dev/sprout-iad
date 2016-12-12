@@ -13,14 +13,14 @@ end
 # invoker directory
 directory "#{ENV['HOME']}/.invoker" do
   action :create
-  owner 'pivotal'
+  owner node['sprout']['user']
   group 'staff'
 end
 
 # Ini file
 file "#{ENV['HOME']}/.invoker/iad-apps.ini" do
   action :create
-  owner 'pivotal'
+  owner node['sprout']['user']
   group 'staff'
   content <<-INI
 [pivots]
