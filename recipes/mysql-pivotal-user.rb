@@ -1,5 +1,5 @@
 ROOT_PASSWORD = node['sprout']['mysql']['root_password']
-USERNAME = 'foobar'
+USERNAME = 'pivotal'
 
 execute 'create a pivotal user with no password' do
   command "mysql -uroot -p#{ROOT_PASSWORD} -e \"create user '#{USERNAME}' identified by ''\""
